@@ -1,0 +1,57 @@
+/* CONTAINER */
+.container{
+	width: #{$container-width};
+	margin: 0 auto;
+}
+
+/* ROWS */
+.row{
+	width: 100%;
+
+	$first-cols: get-columns($pseudo: ":first-child");
+	$last-cols: get-columns($pseudo: ":last-child");
+	$first-last-cols: "#{$first-cols}, #{$last-cols}";
+
+	// clear float on the row last column
+	
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+
+	// remove padding from row first and last column
+	#{$first-cols}{
+		padding-left: 0;
+	}
+
+	#{$last-cols}{
+		padding-right: 0;
+	}
+}
+
+/* COLS */
+$cols: get-columns();
+
+#{$cols}{
+	@include column-display;
+}
+
+@include set-columns-width;
+@include set-columns-offset;
+
+.col-no-padding-left{
+	padding-left: 0;
+}
+
+.col-no-padding-right{
+	padding-right: 0;
+}
+.col-no-padding{
+	@extend .col-no-padding-left;
+	@extend .col-no-padding-right;
+}
+
+/* Vertical padding */
+@include make-padding($padding-sizes);
