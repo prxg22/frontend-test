@@ -115,7 +115,7 @@ gulp.task('bs-reload-build', function() {
 });
 
 // start browserSync on dist folder and watch html, imagens, js and scss files
-gulp.task('serve:build',['build', 'bs-build']);
+gulp.task('server:build',['build', 'bs-build']);
 
 // start browserSync on src folder and watch html, imagens, js and scss files
 gulp.task('default',['browser-sync'], function() {
