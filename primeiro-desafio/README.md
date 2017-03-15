@@ -27,4 +27,5 @@ Create HTML/CSS page
     `$ gulp build`
 
 2. Build and serve on `dist/` folder
+
     `$ gulp server:build`
