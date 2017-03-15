@@ -42,11 +42,11 @@ $cols: get-columns();
 @include set-columns-offset;
 
 .col-no-padding-left{
-	padding-left: 0;
+	padding-left: 0 !important;
 }
 
 .col-no-padding-right{
-	padding-right: 0;
+	padding-right: 0 !important;
 }
 .col-no-padding{
 	@extend .col-no-padding-left;

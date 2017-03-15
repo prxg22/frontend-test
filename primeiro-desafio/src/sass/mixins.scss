@@ -5,12 +5,12 @@
  * Set main column properties
  * @return void
  */
-@mixin column-display() {
-	display: inline-block;
-	float: left;
-	padding: 0 #{$col-margin};
-	box-sizing: border-box;
-}
+ @mixin column-display() {
+ 	display: inline-block;
+ 	float: left;
+ 	padding: 0 #{$col-margin};
+ 	box-sizing: border-box;
+ }
 
 
 /**
@@ -18,9 +18,9 @@
  * @param number $index 
  * @return void
  */
-@mixin column-width($index) {
-	width: percentage($index/12);
-}
+ @mixin column-width($index) {
+ 	width: percentage($index/12);
+ }
 
 
 /**
@@ -28,71 +28,61 @@
  * @param  number $index
  * @return void
  */
-@mixin column-offset($index){
-	margin-left: percentage($index/12) !important;
-}
+ @mixin column-offset($index){
+ 	margin-left: percentage($index/12) !important;
+ 	padding-left: 10px !important;
+ }
 
 /**
  * Set cols width
  * @return void
  */
-@mixin set-columns-width(){
-	@for $i from 1 through 12 {
-		.col-#{$i}{
-			@include column-width($i);
-		}
-	}
-}
+ @mixin set-columns-width(){
+ 	@for $i from 1 through 12 {
+ 		.col-#{$i}{
+ 			@include column-width($i);
+ 		}
+ 	}
+ }
 
 /**
  * Set columns offset
  * @return void
  */
-@mixin set-columns-offset() {
-	@for $i from 1 through 12 {
-		.col-offset-#{$i}{
-			@include column-offset($i);
-		}
-	}
-}
+ @mixin set-columns-offset() {
+ 	@for $i from 1 through 12 {
+ 		.col-offset-#{$i}{
+ 			@include column-offset($i);
+ 		}
+ 	}
+ }
 
 /**
  * Return cols selector list
  * @return list
  */
-@function get-columns($pre: "", $pseudo:""){
-	$i: 1;
-	$list: " #{$pre} .col-#{$i}#{$pseudo}";
-	@for $i from 1 through 12 {
-		$list : "#{$list}, #{$pre} .col-#{$i}#{$pseudo}";
-	}
+ @function get-columns($pre: "", $pseudo:""){
+ 	$i: 1;
+ 	$list: " #{$pre} .col-#{$i}#{$pseudo}";
+ 	@for $i from 1 through 12 {
+ 		$list : "#{$list}, #{$pre} .col-#{$i}#{$pseudo}";
+ 	}
 
-	@return $list;
-}
+ 	@return $list;
+ }
 
 /**
  * Create padding extension classes for each size on list
  * @return void
  */
-@mixin make-padding($list : []) {
-	@each $size in $list {
-		.padding-top-#{$size}, .padding-#{$size} {
-			padding-top: #{$size}px;
-		}
+ @mixin make-padding($list : []) {
+ 	@each $size in $list {
+ 		.padding-top-#{$size}, .padding-#{$size} {
+ 			padding-top: #{$size}px;
+ 		}
 
-		.padding-bottom-#{$size}, , .padding-#{$size}{
-			padding-bottom: #{$size}px;
-		}
-	}
-}
-
-@mixin make-typography($weights: [], $size: []) {
-	@each $weight in $weights {
-		@each $size in $size {
-			.#{$weight}-#{$size} {
-				font-weight: #{$weight};
-				font-size: #{$size};
-			}
-		}
-	}
-}
+ 		.padding-bottom-#{$size}, , .padding-#{$size}{
+ 			padding-bottom: #{$size}px;
+ 		}
+ 	}
+ }

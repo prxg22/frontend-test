@@ -3,9 +3,6 @@
 @import "./mixins.scss";
 @import "./grid.scss";
 
-// create typography util classes
-@include make-typography($font-weights, $font-sizes);
-
 body{
 	margin: 0;
 	padding: 0;
@@ -16,6 +13,7 @@ body{
 		font-size: 16px;
 		color: $text-grey;
 		font-weight: $regular;
+		text-decoration: none;
 	}
 }
 
@@ -44,6 +42,10 @@ header{
 				top: -10px;
 				position: absolute;
 				box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+				background-color: white;
+				padding: 8px 26px;
+				max-width: 75px;
+				max-height: 85px;
 			}
 		}
 
@@ -67,7 +69,6 @@ header{
 				/* nav items */
 				a{
 					font-weight: $semi-bold;
-					text-decoration: none;
 				}
 			}
 		}
@@ -76,5 +77,14 @@ header{
 	/* breadcrumbs */
 	.breadcrumbs{
 		@extend .padding-16;
+
+		&, a, p, span{
+			font-size: 12px; 
+		}
+
+		.separator:after{
+			content: url('../img/seta.svg');
+			vertical-align: sub;
+		}
 	}
 }
