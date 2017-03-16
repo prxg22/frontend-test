@@ -1,0 +1,33 @@
+/* TYPOGRAPHY */
+/* Headers */
+
+h2,h3{
+	margin-top: 0;
+	margin-bottom: 0;
+	border-bottom: 1px solid $footer-grey;
+}
+
+h2{
+	@extend .padding-bottom-20; 
+	font-size: 20px;
+	font-weight: $light;
+}
+
+h3{
+	@extend .padding-bottom-10;
+	font-size: 16px;
+	font-weight: $regular;
+}
+
+h4{
+	font-size: 14px;
+	font-weight: $bold;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p{
+	@extend .padding-top-20;
+	margin: 0;
+	text-align: justify;
+}

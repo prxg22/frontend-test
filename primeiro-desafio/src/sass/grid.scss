@@ -1,4 +1,5 @@
-/* CONTAINER */
+/* GRID */
+/* Container */
 .container{
 	width: #{$container-width};
 	margin: 0 auto;
@@ -31,7 +32,7 @@
 	}
 }
 
-/* COLS */
+/* Columns */
 $cols: get-columns();
 
 #{$cols}{
@@ -53,5 +54,6 @@ $cols: get-columns();
 	@extend .col-no-padding-right;
 }
 
-/* Vertical padding */
+/* Vertical padding and margin */
 @include make-padding($padding-sizes);
+@include make-margin($padding-sizes);
