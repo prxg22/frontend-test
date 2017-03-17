@@ -121,6 +121,6 @@ gulp.task('serve:build',['build', 'bs-build']);
 gulp.task('default',['browser-sync'], function() {
 	gulp.watch(['src/index.html', 'src/partials/**/*.html'], ['bs-reload']);
 	gulp.watch(['src/img/**/*'], ['bs-reload']);
-	gulp.watch(['src/sass/**/*.scss'], ['sass']);
 	gulp.watch(['src/js/**/*.js'], ['bs-reload']);
+	gulp.watch(['src/sass/**/*.scss'], ['sass']);
 });

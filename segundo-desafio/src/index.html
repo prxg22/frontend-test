@@ -28,7 +28,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h1>Formulário de Inscrição</h1>
+					<h1 ng-if="!show_contacts">Formulário de Inscrição</h1>
+					<h1 ng-if="show_contacts">Lista de Inscritos</h1>
+
 				</div>
 			</div>
 		</div>	
@@ -38,48 +40,103 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<form name="form" novalidate>
+					<form 
+						name="form" 
+						ng-submit="save(form, contact)" 
+						novalidate 
+						ng-if="!show_contacts"
+						>
+
+						<!-- Nome -->
 						<div class="input-group">
-							<label ng-class="{focused: form.cname.focus}">
+							<label 
+								ng-class="{focused: form.cname.focus, 'ng-invalid': form.cname.$invalid && !form.cname.$untouched}"
+
+								>
 								Nome
 							</label>
 							<input 
 									ng-blur="form.cname.focus = false" ng-focus="form.cname.focus = true" 
 									type="text" 
 									ng-model="contact.name" 
-									name="cname" 
+									name="cname"
+									required
+									letters 
 								/>
+							<!-- Nome field errors -->
+							<p ng-if="!form.cname.$untouched && form.cname.$invalid" class="error">
+								<span ng-if="form.cname.$error.letters">
+									Este campo só aceita letras.
+								</span>
+								<span ng-if="form.cname.$error.required">
+									Este campo é obrigatório.
+								</span>
+							</p>
 						</div>
-						
+
+						<!-- Email -->
 						<div class="input-group">
-							<label ng-class="{focused: form.cemail.focus}">
+							<label ng-class="{focused: form.cemail.focus, 'ng-invalid': form.cemail.$invalid && !form.cemail.$untouched}">
 								Email
 							</label>
 							<input 
 									ng-blur="form.cemail.focus = false" ng-focus="form.cemail.focus = true" 
 									type="email" 
 									ng-model="contact.email" 
-									name="cemail" 
+									name="cemail"
+									overwrite-email
+									required
 								/>
+								<!-- Email field errors -->
+								<p ng-if="!form.cemail.$untouched && form.cemail.$invalid || form.submited" class="error">
+									<span ng-if="form.cemail.$error.email">
+										Este campo deve ser no formato xx@xx.xx
+									</span>
+									<span ng-if="form.cemail.$error.required">
+										Este campo é obrigatório.
+									</span>
+								</p>
 						</div>
 						
 						<div class="input-group">
-							<label ng-class="{focused: form.ctel.focus}">
+							<label ng-class="{focused: form.ctel.focus, 'ng-invalid': form.ctel.$invalid && !form.ctel.$untouched}">
 								Telefone
 							</label>
 							<input 
 									ng-blur="form.ctel.focus = false" ng-focus="form.ctel.focus = true" 
 									type="text" 
 									ng-model="contact.tel" 
-									name="ctel" 
+									name="ctel"
+									tel
+									required
 								/>
+								<!-- Telefone field errors -->
+								<p ng-if="!form.ctel.$untouched && form.ctel.$invalid" class="error">
+									<span ng-if="form.ctel.$error.tel">
+										Este campo só aceita telefones
+									</span>
+									<span ng-if="form.ctel.$error.required">
+										Este campo é obrigatório.
+									</span>
+								</p>
 						</div>
-						<div class="input-group">
-							<a href="#" class="btn primary">Salvar</a>
-							<a  href="#" class="btn">Cancelar</a>
+						<div class="buttons">
+							<button type="submit" class="btn primary">Salvar</button>
+							<button type="button" ng-click="reset(form)" class="btn">Cancelar</button>
 						</div>
 							
 					</form>
+
+
+					<div class="contact-list" ng-if="show_contacts">
+						<ul>
+							<li ng-repeat="contact in contacts">
+								<h2>{{contact.name}}</h2>
+								<span>{{contact.tel}}</span> - <span>{{contact.email}}</span> 
+							</li>
+						</ul>
+						<button class="btn primary" ng-click="goBack()">< Voltar</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -95,6 +152,12 @@
 
 <!-- App -->
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/MainController.js"></script>
+<script type="text/javascript" src="js/directives/NameDirective.js"></script>
+<script type="text/javascript" src="js/directives/TelDirective.js"></script>
+<script type="text/javascript" src="js/directives/EmailDirective.js"></script>
+
+
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,11 +1,5 @@
 'use strict';
 
-(function(){
-	var app = angular.module('BoilerplateApp', []);
-
-
-	app.controller('MainController', [function(){
-		console.log('app started!');
-	}]);
-
+var app = (function(){
+	return angular.module('BoilerplateApp', []);
 })();
