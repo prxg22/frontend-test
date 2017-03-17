@@ -4,7 +4,7 @@
 h2,h3{
 	margin-top: 0;
 	margin-bottom: 0;
-	border-bottom: 1px solid $footer-grey;
+
 }
 
 h2{
@@ -26,8 +26,18 @@ h4{
 	margin-bottom: 0;
 }
 
+/* Texts */
+
 p{
 	@extend .padding-top-20;
 	margin: 0;
 	text-align: justify;
+}
+
+
+/* Sections */
+#sidebar, #content{
+		h2,h3{
+			border-bottom: 1px solid $footer-grey;
+		}
 }
