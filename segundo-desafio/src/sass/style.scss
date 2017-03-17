@@ -1,0 +1,77 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./grid.scss";
+@import "./typography.scss";
+
+/* MAIN */
+body{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 60px;
+	background-color: $bg;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* header */
+header{
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: $primary;
+}
+/* FORM */
+
+form{
+	.input-group{
+		width: 90%;
+		margin: 30px auto;
+
+		input{
+			width: 100%;
+			padding: 0;
+			border: 0;
+			border-bottom: 1px solid $text-secondary;
+			background-color: transparent;
+			padding-top: 10px;
+
+			&:focus{
+				border:0;
+				border-bottom: 2px solid $primary;
+
+			}
+		}
+	}
+
+	.btn{
+		float: right;
+
+	&:last-child:after{
+		content:'';
+		display: block;
+		overflow: clear;
+	}
+	}
+}
+
+textarea:focus, input:focus{
+	outline: none;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Buttons */
+.btn{
+	text-transform: uppercase;
+	padding: 8px 12px;
+
+	&.primary{
+		background-color: $primary;
+		color: white;
+	}
+}

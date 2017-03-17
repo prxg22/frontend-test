@@ -1,0 +1,32 @@
+{
+  "name": "boilerplate",
+  "authors": [
+    "Paulo Ricardo Xavier Giusti <prxg22@gmail.com>"
+  ],
+  "description": "Angular JS, Gulp, Bower, SASS front-end project boilerplate",
+  "main": "index.html",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "gulp",
+    "bower",
+    "sass",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.2"
+  }
+}

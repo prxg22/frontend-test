@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+/* TYPOGRAPHY */
+$font-family: 'Roboto';
+
+body, p, span, a, label, input{
+	font-family: $font-family;
+	font-size: 16px;
+	font-weight: $regular;
+	text-decoration: none;
+	color: $text;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6{
+	color: $bg;
+}
+
+h2,h3{
+	margin-top: 0;
+	margin-bottom: 0;
+
+}
+
+h1{
+	font-weight: $regular;
+}
+
+h2{
+	@extend .padding-bottom-20; 
+	font-size: 20px;
+	font-weight: $light;
+}
+
+h3{
+	@extend .padding-bottom-10;
+	font-size: 16px;
+	font-weight: $regular;
+}
+
+h4{
+	font-size: 14px;
+	font-weight: $bold;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Texts */
+
+p{
+	@extend .padding-top-20;
+	margin: 0;
+	text-align: justify;
+}
+
+/* forms */
+label{
+	color: $text-secondary;
+	font-size: 14px;
+
+	&.focused{
+		font-size: 12px;
+		color: $primary;
+		font-weight: $medium;
+
+	}
+}
+
+/* buttons */
+.btn{
+	font-weight: $medium;
+	color: $text-secondary;
+}
