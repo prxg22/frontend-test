@@ -6,7 +6,7 @@
  * Validate name field. It returns false to special characters and numbers
  */
 (function(app) {
-	const NAME_REGEX = /^[a-z ]+$/i; // regex to be tested
+	var NAME_REGEX = /^[a-z ]+$/i; // regex to be tested
 
 	app.directive('letters', function() {
 		return{
@@ -15,8 +15,6 @@
 				if(ctrl && ctrl.$validators){
 					ctrl.$validators.letters = function(modelValue, viewValue) {
 						if(NAME_REGEX.test(viewValue)){
-						console.log(NAME_REGEX.test(viewValue));
-
 							return true;
 						}
 						return false;
