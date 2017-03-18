@@ -1,26 +1,31 @@
-# boilerplate
-Angular, SASS and Gulp front-end projects boilerplate
+# Segundo Desafio
+Create HTML/CSS page
 
 ## Quickstart
 
-- Clone the repository
-
-- Install `npm` dependecies
+1. Install `npm` dependecies
 
     `$ npm install`
 
-- Move to `src/` folder
+2. Move to `src/` folder
 
     `$ cd src`
 
-- Install `bower` dependecies
+3. Install `bower` dependecies
 
     `$ bower install`
 
-- Start server to development
+4. Start server to development
 
     `$ gulp`
 
-- Build project on 'dist/' folder
+
+## Deploy
+
+1. Build project on `dist/` folder
 
     `$ gulp build`
+
+2. Build and serve on `dist/` folder
+
+    `$ gulp server:build`
