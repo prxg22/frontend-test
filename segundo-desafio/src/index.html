@@ -105,7 +105,7 @@
 								Telefone
 							</label>
 							<input 
-									ng-blur="form.ctel.focus = false" ng-focus="form.ctel.focus = true" 
+									ng-blur="form.ctel.focus = false; makeTelMask(form)" ng-focus="form.ctel.focus = true" 
 									type="text" 
 									ng-model="contact.tel" 
 									name="ctel"
